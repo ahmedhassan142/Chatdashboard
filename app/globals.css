@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  /* Figma ki exact colors - White background aur Slate text */
+  --background: #ffffff;
+  --foreground: #1e293b; /* slate-800 - Perfect for modern UI */
+  
+  /* Light borders aur subtle grays for the dashboard */
+  --border-light: #eaecf0;
+  --bg-hover: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border-light: var(--border-light);
+  --color-bg-hover: var(--bg-hover);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Optional: Dark mode support if user prefers it, 
+   but we override it with white because your Figma is strictly White Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #1e293b;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for a premium, professional dashboard look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
